@@ -1,4 +1,4 @@
-# Technator 
+# Technator 🧠 
 
 A Akinator-like game based on Computing History Characters 
 
@@ -18,7 +18,7 @@ A Akinator-like game based on Computing History Characters
 - Linus Torvalds
 
 ## Status of the project
-In development...
+In development... 💻
 
 ## Access the project
 This project is not available yet. But soon will be deployed and the URL will be available here.
