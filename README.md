@@ -2,6 +2,21 @@
 
 A Akinator-like game based on Computing History Characters 
 
+## Characters in this game
+
+- Ada Lovelace
+- Alan Turing
+- Grace Hopper
+- Charles Babbage
+- Tim Berners-Lee
+- Dennis Ritchie
+- Ken Thompson
+- John von Neumann
+- Steve Wozniak
+- Bill Gates
+- Steve Jobs
+- Linus Torvalds
+
 ## Getting Started
 
 clone the repo
