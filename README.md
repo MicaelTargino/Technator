@@ -11,7 +11,7 @@ git clone https://github.com/MicaelTargino/Technator.git
 
 install the dependencies
 ```bash 
-git clone https://github.com/MicaelTargino/Technator.git
+npm install 
 ```
 
 run the development server:
