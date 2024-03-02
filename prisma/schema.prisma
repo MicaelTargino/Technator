@@ -24,3 +24,8 @@ model linkedfacts {
 
   @@id([character_id, fact_id])
 }
+
+model Session { 
+  id   String  @db.VarChar(36)  @id @default(uuid())
+  active Boolean @default(true)
+}
