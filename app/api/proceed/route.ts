@@ -33,19 +33,30 @@ export async function POST(
         return NextResponse.json({status: 401})
     }
 
-    
+    const questions = await prisma.facts.findMany({
+        where: {
+            type: 'general'
+        }
+    })
+
+    console.log(questions)
+
+    const randIdx =  Math.ceil(Math.random() * questions.length - 1)
+    const question = questions[randIdx]
+
+    console.log(randIdx)
 
     return NextResponse.json({core: {
         ended: false,
         status: 200
         },
-        question: "", 
-        options: {
-            "Yes": true, 
-            "No": false
-        },
+        question: question.description, 
+        options: [
+            {"name": "Yes", value: true},
+            {"name": "No", value: false}
+        ],
         character: "",
         description: ""
     })
-    
+
 }

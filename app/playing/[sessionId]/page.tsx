@@ -45,9 +45,18 @@ export default async function PlayingPage({params}: any) {
     //     // if not ended, show a question 
     // }
 
-    return (
-        <section>
-            Home {sessionId}
-        </section>
-    )
+    if (!data.core.ended) {
+        return (
+            <section className='w-full md:w-[50%] lg:w-[30%] mx-auto h-[100vh] flex flex-col items-center justify-center gap-5'>
+                <h3 className='text-2xl text-white drop-shadow-md max-w-96 text-center'>Your character {data.question} ? </h3>
+
+                <div className='flex flex-col items-center justify-center gap-3 w-full'>
+                    {data.options.map((option: any) => (
+                        <span className='w-[50%] py-2 bg-slate-100 rounded-lg shadow-md text-center hover:bg-slate-200 transition-all cursor-pointer'>{option.name}</span>
+                    ))}
+                </div>
+            </section>
+        )
+    }
+
 }
