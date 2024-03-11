@@ -15,10 +15,9 @@ export async function POST(
     res: NextApiResponse<ResponseData>
     ) {
     let headersList = headers()
+    let res_status = 200
     
     const sessionId = headersList.get('session-authorization');
-
-    console.log(sessionId)
     
     const prisma = new PrismaClient()
 
@@ -30,7 +29,7 @@ export async function POST(
     })
 
     if (!sessionMatch?.active) {
-        return NextResponse.json({status: 401})
+        res_status = 404   
     }
 
     const questions = await prisma.facts.findMany({
@@ -46,9 +45,10 @@ export async function POST(
 
     console.log(randIdx)
 
-    return NextResponse.json({core: {
+    return NextResponse.json({
+        core: {
         ended: false,
-        status: 200
+        status: res_status
         },
         question: question.description, 
         options: [

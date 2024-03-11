@@ -15,8 +15,6 @@ export default async function PlayingPage({params}: any) {
     
     const data = await res.data
 
-    console.log(data)
-
     if (data.core.status != 200) {
         return (
             <div className='w-full h-[100vh] flex flex-col items-center justify-center'>
