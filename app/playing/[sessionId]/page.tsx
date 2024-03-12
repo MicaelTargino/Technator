@@ -5,9 +5,7 @@ import Link from 'next/link';
 export default async function PlayingPage({params}: any) {
     const {sessionId} = params;
 
-    const res = await axios.post('http://localhost:3000/api/proceed', { 
-        'init': true 
-    }, {
+    const res = await axios.post('http://localhost:3000/api/proceed', {}, {
         headers: {
             'session-authorization': sessionId
         }

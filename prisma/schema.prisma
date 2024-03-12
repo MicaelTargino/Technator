@@ -29,3 +29,10 @@ model Session {
   id   String  @db.VarChar(36)  @id @default(uuid())
   active Boolean @default(true)
 }
+
+model Response {
+  id String @db.VarChar(36) @id @default(uuid())
+  content Boolean
+  fact_id Int 
+  session_id String @db.VarChar(36)
+}
