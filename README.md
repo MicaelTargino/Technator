@@ -121,42 +121,37 @@ CREATE TABLE IF NOT EXISTS linkedfacts (
 );
 
 INSERT INTO linkedfacts (character_id, fact_id) VALUES
-(1, 1),
-(1, 4),
-(1, 7),
-(2, 2),
-(2, 5),
-(2, 8),
-(3, 3),
-(3, 6),
-(3, 9),
-(4, 1),
-(4, 4),
-(4, 7),
-(5, 2),
-(5, 5),
-(5, 8),
-(6, 3),
-(6, 6),
-(6, 9),
-(7, 1),
-(7, 4),
-(7, 7),
-(8, 2),
-(8, 5),
-(8, 8),
-(9, 3),
-(9, 6),
-(9, 9),
-(10, 1),
-(10, 10),
-(10, 7),
-(11, 2),
-(11, 11),
-(11, 8),
-(12, 3),
-(12, 12),
-(12, 9);
+-- Existing entries for reference
+(1, 1), -- Ada Lovelace was a woman
+(1, 4), -- Ada Lovelace was considered the first computer programmer
+(1, 7), -- Ada Lovelace was a pioneer in computer science
+(2, 2), -- Alan Turing was a British mathematician
+(2, 5), -- Alan Turing developed the concept of the Turing Machine
+(2, 7), -- Alan Turing was a pioneer in computer science
+(3, 3), -- Grace Hopper was an American computer scientist
+(3, 6), -- Grace Hopper developed the first compiler for a computer programming language
+(3, 7), -- Grace Hopper was a pioneer in computer science
+(4, 2), -- Charles Babbage was a British mathematician
+(4, 7), -- Charles Babbage was a pioneer in computer science
+(5, 9), -- Tim Berners-Lee was influential in the development of the internet
+(6, 10), -- Dennis Ritchie invented a programming language
+(7, 10), -- Ken Thompson invented a programming language
+(8, 7), -- John von Neumann was a pioneer in computer science
+(9, 12), -- Steve Wozniak designed influential computer hardware
+(10, 8), -- Bill Gates was a co-founder of a major tech company
+(10, 11), -- Bill Gates created significant software
+(11, 8), -- Steve Jobs was a co-founder of a major tech company
+(11, 12), -- Steve Jobs designed influential computer hardware
+(12, 11), -- Linus Torvalds created significant software
+
+-- Adding Grace Hopper was also a woman
+(3, 1), -- Grace Hopper was a woman
+
+-- Adding more people linked to "was an American computer scientist"
+(6, 3), -- Dennis Ritchie was an American computer scientist
+(7, 3), -- Ken Thompson was an American computer scientist
+(9, 3), -- Steve Wozniak was an American computer scientist
+(12, 3); -- Linus Torvalds, although Finnish, has made significant contributions to American computer science and has lived and worked in the U.S.
 
 ```
 
