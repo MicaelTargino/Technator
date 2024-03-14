@@ -25,22 +25,6 @@ export default async function PlayingPage({params}: any) {
         )
     }
 
-    // const proceed =  async () => {
-    //     // request api to get the next question
-    //     const res = await axios.post('http://localhost:3000/api/proceed', {
-    //         headers: {
-    //             'Authorization': sessionId
-    //         },
-    //         data: {
-    //             'init': true
-    //         }
-    //     })
-
-    //     // if ended, return the answer
-
-    //     // if not ended, show a question 
-    // }
-
     if (!data.core.ended) {
         return (
             <section className='w-full md:w-[50%] lg:w-[30%] mx-auto h-[100vh] flex flex-col items-center justify-center gap-5'>

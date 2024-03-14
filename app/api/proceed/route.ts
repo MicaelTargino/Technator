@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 import { headers } from 'next/headers'
 
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Prisma } from '@prisma/client'
 
 
 type ResponseData = {
@@ -90,15 +90,25 @@ export async function POST(
 
     console.log(factIds)
 
-    const linkedFacts = await prisma.linkedfacts.findMany({
-        where: {
-            fact_id: {
-                in: factIds
-            }
-        }
-    });
+    const numberOfFacts = factIds.length;
 
-    const characterIds = linkedFacts.map(link => link.character_id);
+    const sqlQuery = `
+        SELECT character_id
+        FROM linkedfacts
+        WHERE fact_id IN (?)
+        GROUP BY character_id
+        HAVING COUNT(DISTINCT fact_id) = ?
+        `;
+    
+    const linkedFacts: [{character_id:number}] = await prisma.$queryRaw`
+        SELECT character_id
+        FROM linkedfacts
+        WHERE fact_id IN (${Prisma.join(factIds)})
+        GROUP BY character_id
+        HAVING COUNT(DISTINCT fact_id) = ${numberOfFacts}
+    `;
+
+    const characterIds = linkedFacts?.map(link => link.character_id);
 
     console.log(characterIds);
 
