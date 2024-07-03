@@ -155,7 +155,8 @@ export async function POST(
             status: res_status
             },
             character: possibleCharacters[0].name,
-            description: ""
+            description: possibleCharacters[0].details,
+            id: possibleCharacters[0].id
         })
     } 
     else if (notAskedFacts.length > 0) {

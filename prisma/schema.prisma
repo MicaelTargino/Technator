@@ -1,3 +1,31 @@
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+// datasource db {
+//   provider = "mysql"
+//   url      = env("DATABASE_URL")
+// }
+
+// model characters {
+//   id      Int     @id @default(autoincrement())
+//   name    String  @db.VarChar(255)
+//   details String? @db.VarChar(1024)
+// }
+
+// model facts {
+//   id          Int    @id @default(autoincrement())
+//   description String @db.VarChar(255)
+//   type        String @db.VarChar(255)
+// }
+
+// model linkedfacts {
+//   character_id Int
+//   fact_id      Int
+
+//   @@id([character_id, fact_id])
+// }
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,6 +38,7 @@ datasource db {
 model characters {
   id   Int    @id @default(autoincrement())
   name String @db.VarChar(255)
+  details String? @db.VarChar(1024)
 }
 
 model facts {

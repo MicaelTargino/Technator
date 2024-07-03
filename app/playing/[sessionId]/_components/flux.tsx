@@ -23,6 +23,8 @@ export const Flux = ({ initialQuestion, initialOptions, initialFactId }: Questio
     const [factId, setFactId] = useState(initialFactId);
     const [ended, setEnded] = useState(false);
     const [character, setCharacter] = useState(null);
+    const [description, setDescription] = useState(undefined);
+    const [id, setId] = useState(undefined);
 
     const submitAnswer = async (value: string) => {
         try {
@@ -40,6 +42,8 @@ export const Flux = ({ initialQuestion, initialOptions, initialFactId }: Questio
             if (data.core.ended) {
                 setEnded(true);
                 setCharacter(data.character)
+                setDescription(data.description)
+                setId(data.id)
             }
             // Assuming the response data structure matches your initial props
             setQuestion(data.question);
@@ -54,7 +58,7 @@ export const Flux = ({ initialQuestion, initialOptions, initialFactId }: Questio
     if (ended) {
         if(character) {
             return (
-                <Feedback type="success" character={character} /> 
+                <Feedback type="success" character={character} desc={description} id={id} /> 
             )
         } else {
             return (
