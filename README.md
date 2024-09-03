@@ -14,8 +14,10 @@ A Akinator-like game based on Computing History Characters
 - Steve Jobs
 - Linus Torvalds
 
-## Access the project
-This project is not available yet. But soon will be deployed and the URL will be available here.
+## Project Status
+COMPLETED
+
+The development of the Taskify is currently is completed for now. Soon will be deployed and the link will be available here.
 
 ## Run the project in your own computer
 
