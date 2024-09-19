@@ -26,9 +26,11 @@ export const Flux = ({ initialQuestion, initialOptions, initialFactId }: Questio
     const [description, setDescription] = useState(undefined);
     const [id, setId] = useState(undefined);
 
+    const API_URL = process.env.API_URL;
+
     const submitAnswer = async (value: string) => {
         try {
-            const res = await axios.post('/api/proceed', {
+            const res = await axios.post(`${API_URL}/api/proceed`, {
                 answer: value,
                 fact_id: factId
             }, {
