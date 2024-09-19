@@ -1,23 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
 
-import { PrismaClient, Prisma } from '@prisma/client'
+export async function POST(req: Request) {
+  const prisma = new PrismaClient();
 
+  const session = await prisma.session.create({
+    data: {},
+  });
 
-type ResponseData = {
-    message: string
-}
-
-export async function POST(
-    req: NextApiRequest,
-    res: NextApiResponse<ResponseData>
-    ) {
-        
-    const prisma = new PrismaClient()
-
-    const session = await prisma.session.create({
-        data: {}
-    })
-
-    return NextResponse.json({token: session.id})
+  return NextResponse.json({ token: session.id });
 }

@@ -19,7 +19,6 @@ export const Feedback = ({type, character, desc, id}: feedBackProps) => {
                     <b className="font-bolder text-4xl flex flex-row items-center justify-center w-full gap-2">So easy! <CheckCircle className="text-green-500" size={48} /></b>
                     <span>Your character is<b className="font-bolder text-2xl"> {character}</b></span>
                     <span className="text-2xl flex  items-center justify-center gap-2 w-[80%] ">
-                        
                         <img src={`/img/${id}.jpeg`}></img>
                         <p className="w-[35%] text-sm">{desc}</p>
                     </span>
@@ -42,7 +41,7 @@ export const Feedback = ({type, character, desc, id}: feedBackProps) => {
                     <h2 className="text-slate-200 drop-shadow-lg flex flex-col items-center justify-center gap-4">
                         <b className="font-bolder text-4xl flex flex-row items-center justify-center gap-2">Sorry! <XCircleIcon className="text-red-500" size={48} /></b>
                         <span className="text-2xl flex gap-2">
-                            <span>I wasn't able to guess your character.</span>
+                            <span>I wasn&#39;t able to guess your character.</span>
                         </span>
                     </h2>
                     <div>
