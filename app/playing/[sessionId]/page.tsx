@@ -6,7 +6,7 @@ import { Flux } from './_components/flux';
 export default async function PlayingPage({params}: any) {
     const {sessionId} = params;
 
-    const res = await axios.post('http://localhost:3000/api/proceed', {}, {
+    const res = await axios.post('/api/proceed', {}, {
         headers: {
             'session-authorization': sessionId
         }

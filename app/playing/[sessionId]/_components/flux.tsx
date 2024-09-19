@@ -28,7 +28,7 @@ export const Flux = ({ initialQuestion, initialOptions, initialFactId }: Questio
 
     const submitAnswer = async (value: string) => {
         try {
-            const res = await axios.post('http://localhost:3000/api/proceed', {
+            const res = await axios.post('/api/proceed', {
                 answer: value,
                 fact_id: factId
             }, {
