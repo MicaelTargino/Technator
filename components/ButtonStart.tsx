@@ -9,8 +9,10 @@ export const ButtonStart = () => {
 
     const API_URL = process.env.API_URL;
 
+    console.log(API_URL);
+
     const startGame = async () => {
-        const startGameEndpoint = `${API_URL}/api/startgame`;
+        const startGameEndpoint = `/api/startgame`;
         const res = await axios.post(startGameEndpoint);
         const { token } = await res.data;
 
