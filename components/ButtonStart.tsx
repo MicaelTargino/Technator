@@ -7,10 +7,6 @@ import { useRouter } from 'next/navigation'
 export const ButtonStart = () => {
     const router = useRouter()
 
-    const API_URL = process.env.API_URL;
-
-    console.log(API_URL);
-
     const startGame = async () => {
         const startGameEndpoint = `/api/startgame`;
         const res = await axios.post(startGameEndpoint);
